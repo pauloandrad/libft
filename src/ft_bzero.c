@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 18:51:33 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 19:01:51 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 18:38:45 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:04:21 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <strings.h>
 
-char	*ft_strchr(const char *s, int c)
+void	ft_bzero(void *s, size_t n)
 {
-	int i;
+	char	*p;
 
-	i = 0;
-	while (s[i])
+	p = (char *)s;
+	while (n > 0)
 	{
-		if (s[i] == c)
-		{
-			return (s[i]);
-		}
+		*p = 0;
+		p++;
+		n--;
 	}
-
-	return (NULL);
 }

@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 18:51:33 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 19:12:23 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 15:39:33 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 16:41:24 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <unistd.h>
 
-char	*ft_strrchr(const char *s, int c)
+int	tolower(int character)
 {
-	int i;
-	char *p;
-
-	i = 0;
-	p = NULL;
-	while (s[i])
+	if (character >= 'A' && character <= 'Z')
 	{
-		if (s[i] == c)
-		{
-			p = (s[i]);
-		}
+		character += 32;
 	}
-
-	return p;
+	return (character);
 }

@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 20:04:50 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 20:10:25 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 19:38:11 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:11:04 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-char	*ft_strnstr(const char *big, const char *little, size_t len)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	int	i;
-	int	j;
+	size_t			i;
+	unsigned char	*p1;
+	unsigned char	*p2;
 
-	if (little[0] == '\0')
-		return (big);
+	p1 = (unsigned char *)s1;
+	p2 = (unsigned char *)s2;
 	i = 0;
-	while (big[i] != '\0')
+	while (i < n)
 	{
-		j = 0;
-		while (big[i + j] == little[j] && little[j] != '\0')
-		{
-			j++;
-		}
-		if (little[j] == '\0')
-			return (&big[i]);
+		if (p1[i] != p2[i])
+			return ((int)p1[i] - p2[i]);
 		i++;
 	}
 	return (0);

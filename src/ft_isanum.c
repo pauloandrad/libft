@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_isanum.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 15:39:33 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 16:25:06 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 16:50:47 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:06:47 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <libft.h>
 
-int	tolower(int character)
+int	ft_isanum(int c)
 {
-	if (character >= 'A' && character <= 'Z')
-	{
-		character += 32;
-	}
-	return (character);
-}
-
-int	main(void)
-{
-	int	letter;
-
-	letter = tolower('A');
-	write(1, &letter, 1);
-	return (0);
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

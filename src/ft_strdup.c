@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 19:46:01 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 19:53:01 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/23 15:42:39 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:16:04 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <libft.h>
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strdup(char *src)
 {
-	size_t i;
-	unsigned char *p_dest = (unsigned char *)dest;
-	const unsigned char *p_src = (const unsigned char *)src;
+	int		i;
+	char	*copy;
 
+	copy = (char *)malloc((ft_strlen(src) + 1) * sizeof(char));
+	if (!copy)
+		return (NULL);
 	i = 0;
-
-	while (i < n)
+	while (src[i])
 	{
-		p_dest[i] = p_src[i];
+		copy[i] = src[i];
 		i++;
 	}
-
-	return (dest);
+	copy[i] = '\0';
+	return (copy);
 }

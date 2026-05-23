@@ -1,16 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isanum.c                                        :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 16:50:47 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 18:05:01 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 18:26:01 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:37:35 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isanum(int c)
+int	ft_isascii(int num)
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	if ((num >= 0 && num <= 127))
+		return (1);
+	return (0);
 }

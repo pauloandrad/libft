@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 18:35:26 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 18:37:29 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 16:41:39 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 18:06:39 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isprint(int c)
+int	ft_isalpha(int letter)
 {
-	if (c <= 31 || c == 127)
-	{
-		return (0);
-	}
-	return (1);
+	if ((letter >= 'a' && letter <= 'z') || (letter >= 'A' && letter <= 'Z'))
+		return (1);
+	return (0);
 }
-

@@ -1,28 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/16 19:13:18 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 19:30:02 by pahenriq         ###   ########.fr       */
+/*   Created: 2026/05/16 18:51:33 by pahenriq          #+#    #+#             */
+/*   Updated: 2026/05/23 19:20:09 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+char	*ft_strrchr(const char *s, int c)
 {
-	size_t	i;
 	char	*p;
 
-	p = (char *)s;
-	i = 0;
-	while (i < n)
+	if (c == '\0')
 	{
-		p[i] = c;
-		i++;
+		while (*s)
+			s++;
+		return ((char *)s);
 	}
-	return (s);
+	p = NULL;
+	while (*s)
+	{
+		if (*s == c)
+			p = ((char *)s);
+		s++;
+	}
+	return (p);
 }
+// int main()
+// {
+// 	char		str2[] = "bonjour";
+// 	ft_strrchr(str2, 'b');
+// }
