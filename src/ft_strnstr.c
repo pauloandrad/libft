@@ -6,7 +6,7 @@
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 20:04:50 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/23 20:05:17 by pahenriq         ###   ########.fr       */
+/*   Updated: 2026/05/31 15:37:48 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,13 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		j = 0;
 		while (big[i + j] == little[j] && little[j] != '\0')
 		{
-			if (i + j == len) return (0);
+			if (i + j == len)
+				return (NULL);
 			j++;
 		}
 		if (little[j] == '\0')
 			return ((char *)&big[i]);
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

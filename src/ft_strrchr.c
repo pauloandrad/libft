@@ -6,33 +6,46 @@
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 18:51:33 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/23 19:20:09 by pahenriq         ###   ########.fr       */
+/*   Updated: 2026/06/04 20:28:22 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string.h>
 
+char	*ft_strchr(const char *s, int c)
+{
+	int				i;
+	unsigned char	character;
+
+	i = 0;
+	character = (unsigned char)c;
+	while (s[i])
+	{
+		if (s[i] == character)
+			return ((char *)&s[i]);
+		i++;
+	}
+	if (character == '\0')
+		return ((char *)&s[i]);
+	return (NULL);
+}
+
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*p;
+	int				i;
+	char			*p;
+	unsigned char	character;
 
-	if (c == '\0')
-	{
-		while (*s)
-			s++;
-		return ((char *)s);
-	}
+	i = 0;
 	p = NULL;
-	while (*s)
+	character = (unsigned char)c;
+	while (s[i])
 	{
-		if (*s == c)
-			p = ((char *)s);
-		s++;
+		if (s[i] == character)
+			p = ((char *)&s[i]);
+		i++;
 	}
+	if (character == '\0')
+		return ((char *)&s[i]);
 	return (p);
 }
-// int main()
-// {
-// 	char		str2[] = "bonjour";
-// 	ft_strrchr(str2, 'b');
-// }

@@ -23,12 +23,11 @@ int	ft_atoi(const char *nptr)
 		i++;
 	if (nptr[i] == '-')
 	{
-			sign *= -1;
-			i++;
-	}
-	else if (nptr[i] == '+') 
+		sign *= -1;
 		i++;
-
+	}
+	else if (nptr[i] == '+')
+		i++;
 	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		num = (num * 10) + nptr[i] - '0';

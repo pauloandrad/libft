@@ -6,14 +6,14 @@
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/23 15:42:39 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/23 18:16:04 by pahenriq         ###   ########.fr       */
+/*   Updated: 2026/06/04 16:18:28 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 #include <stdlib.h>
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	int		i;
 	char	*copy;

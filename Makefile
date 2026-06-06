@@ -1,36 +1,22 @@
-CC			= cc
-CFLAGS 	= -Wall -Wextra -Werror -I.
-AR = ar
-ARFLAGS = rcs
+SRC = $(shell find src -name "*.c")
+OBJ = $(SRC:src/%.c=obj/%.o)
 
-SRCDIR 	= src
-OBJDIR	= obj
+all: a.out
 
-NAME		= libft.a
-HEADER  = libft.h
+a.out: $(OBJ)
+	@ar rcs a.out $(OBJ)
 
-SRC			= $(shell find $(SRCDIR) -name "*.c")
-OBJ 		= $(SRC:$(SRCDIR)/%.c=$(OBJDIR)/%.o)
-
-all: $(NAME)
-
-$(NAME) : $(OBJ)
-		@$(AR) $(ARFLAGS) $(NAME) $(OBJ)
-
-$(OBJDIR)/%.o: $(SRCDIR)/%.c $(HEADER)
-		mkdir -p $(dir $@)
-		@$(CC) $(CFLAGS) -c $< -o $@
-
-$(OBJDIR):
-		@mkdir -p $(OBJDIR)
+obj/%.o: src/%.c libft.h
+	mkdir -p $(dir $@)
+	@cc -Wall -Wextra -Werror -I. -c $< -o $@
 
 clean:
-		rm -rf $(OBJDIR)
-		@echo "Obj removed"
+	rm -rf obj
+	@echo "Obj removed"
 
 fclean: clean
-		rm -f $(NAME)
-		@echo "Exec rm"
+	rm -f a.out
+	@echo "Exec rm"
 
 re: fclean all
 

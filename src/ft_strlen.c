@@ -6,13 +6,15 @@
 /*   By: pahenriq <pahenriq@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/16 15:23:17 by pahenriq          #+#    #+#             */
-/*   Updated: 2026/05/16 15:34:37 by pahenriq         ###   ########.fr       */
+/*   Updated: 2026/06/04 18:46:10 by pahenriq         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <string.h>
+
+size_t	ft_strlen(char const *str)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (str[i])

@@ -10,13 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include <libft.h>
 
-int	toupper(int character)
+int	ft_toupper(int c)
 {
-	if (character >= 'a' && character <= 'z')
-	{
-		character -= 32;
-	}
-	return (character);
+	if (c >= 'a' && c <= 'z')
+		c -= 32;
+	return (c);
 }
