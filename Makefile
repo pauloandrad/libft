@@ -1,17 +1,17 @@
 NAME = libft.a
-SRC = $(shell find src -name "*.c")
-OBJ = $(SRC:src/%.c=./%.o)
+SRC = $(wildcard ft_*.c)
+OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 
-./%.o: src/%.c libft.h
-	@cc -Wall -Wextra -Werror -I. -c $< -o $@
+%.o: %.c libft.h
+	@cc -Wall -Wextra -Werror -c $< -o $@
 
 clean:
-	rm -rf $(OBJ)
+	rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)

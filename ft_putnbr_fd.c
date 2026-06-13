@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-void	ft_putnbr_recursive(long nb, int fd)
+static void	ft_putnbr_recursive(long nb, int fd)
 {
 	char	mol;
 
