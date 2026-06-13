@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_cntsubs(char const *s, char c)
+static size_t	ft_cntsubs(char const *s, char c)
 {
 	size_t	subs_len;
 	size_t	i;
@@ -34,7 +33,7 @@ size_t	ft_cntsubs(char const *s, char c)
 	return (subs_len);
 }
 
-char	**ft_free_matrix(void **matrix, size_t size)
+static char	**ft_free_matrix(void **matrix, size_t size)
 {
 	size_t	i;
 
@@ -50,7 +49,7 @@ char	**ft_free_matrix(void **matrix, size_t size)
 	return (NULL);
 }
 
-char	**ft_malloc_split(char const *s, char c)
+static char	**ft_malloc_split(char const *s, char c)
 {
 	char	**s_list;
 
@@ -62,7 +61,7 @@ char	**ft_malloc_split(char const *s, char c)
 	return (s_list);
 }
 
-void	ft_skip_spliter(size_t *i, char const *s, char c)
+static void	ft_skip_spliter(size_t *i, char const *s, char c)
 {
 	while (s[*i] && s[*i] == c)
 		(*i)++;

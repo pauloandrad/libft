@@ -10,15 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <stdlib.h>
-#include <string.h>
+#include "libft.h"
 
-char	*ft_malloc_empty(void)
+static char	*ft_malloc_empty(void)
 {
 	char	*empty;
 
 	empty = (malloc(sizeof(char) * 1));
+	if (!empty)
+		return (NULL);
 	empty[0] = '\0';
 	return (empty);
 }

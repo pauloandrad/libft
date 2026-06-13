@@ -10,16 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_cnt_num_char(long n)
+static size_t	ft_cnt_num_char(long n)
 {
 	if (n <= 9)
 		return (1);
 	return (1 + ft_cnt_num_char(n / 10));
 }
 
-void	ft_alloc_num(char *str, long n, int *i)
+static void	ft_alloc_num(char *str, long n, int *i)
 {
 	if (n <= 9)
 	{

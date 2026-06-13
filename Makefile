@@ -1,22 +1,20 @@
+NAME = libft.a
 SRC = $(shell find src -name "*.c")
-OBJ = $(SRC:src/%.c=obj/%.o)
+OBJ = $(SRC:src/%.c=./%.o)
 
-all: a.out
+all: $(NAME)
 
-a.out: $(OBJ)
-	@ar rcs a.out $(OBJ)
+$(NAME): $(OBJ)
+	@ar rcs $(NAME) $(OBJ)
 
-obj/%.o: src/%.c libft.h
-	mkdir -p $(dir $@)
+./%.o: src/%.c libft.h
 	@cc -Wall -Wextra -Werror -I. -c $< -o $@
 
 clean:
-	rm -rf obj
-	@echo "Obj removed"
+	rm -rf $(OBJ)
 
 fclean: clean
-	rm -f a.out
-	@echo "Exec rm"
+	rm -f $(NAME)
 
 re: fclean all
 
